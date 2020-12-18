@@ -14,11 +14,11 @@ import me.coffeemori.hellospring.services.MemberService;
 @Configuration
 public class SpringConfig {
   
-  private DataSource datasource;
+  private DataSource dataSource;
 
   @Autowired
-  public SpringConfig(DataSource datasource) {
-    this.datasource = datasource;
+  public SpringConfig(DataSource dataSource) {
+    this.dataSource = dataSource;
   }
 
   @Bean
@@ -29,7 +29,8 @@ public class SpringConfig {
   @Bean
   public MemberRepository memberRepository() {
 //    return new MemoryMemberRepository();
-    return new JdbcMemberRepository(datasource);
+//    return new JdbcMemberRepository(dataSource);
+    return new JdbcMemberRepository(dataSource);
   }
 
 }
