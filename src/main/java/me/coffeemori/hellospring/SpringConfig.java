@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import me.coffeemori.hellospring.aop.TimeTraceAop;
 import me.coffeemori.hellospring.repositories.JdbcMemberRepository;
 import me.coffeemori.hellospring.repositories.JpaMemberRepository;
 import me.coffeemori.hellospring.repositories.MemberRepository;
@@ -36,6 +37,11 @@ public class SpringConfig {
   // public SpringConfig(DataSource dataSource) {
   //   this.dataSource = dataSource;
   // }
+
+  @Bean
+  public TimeTraceAop timeTraceAop() {
+    return new TimeTraceAop();
+  }
 
   @Bean
   public MemberService memberService() {
