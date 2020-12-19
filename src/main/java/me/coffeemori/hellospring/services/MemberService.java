@@ -5,10 +5,12 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import me.coffeemori.hellospring.domains.Member;
 import me.coffeemori.hellospring.repositories.MemberRepository;
 
+@Transactional
 public class MemberService {
   
   private final MemberRepository memberRepository;
